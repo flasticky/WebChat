@@ -19,7 +19,7 @@
     <script type="text/javascript">
         $(document).ready(function()
         {
-            var socket = io.connect("localhost")
+            var socket = io.connect("localhost:5000")
             socket.on('connect', function()
             {
                 socket.send("User connected.");
