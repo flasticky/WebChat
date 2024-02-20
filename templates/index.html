@@ -19,7 +19,7 @@
     <script type="text/javascript">
         $(document).ready(function()
         {
-            var socket = io.connect("https://flaskjan.tech/WebChat/templates/")
+            var socket = io.connect("localhost")
             socket.on('connect', function()
             {
                 socket.send("User connected.");
