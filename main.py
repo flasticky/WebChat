@@ -5,10 +5,10 @@ app = Flask(__name__)
 app.config['SECRET'] = "123456Ab"
 socketio = SocketIO(app, cors_allowed_origins="*")
 
-@socketio.io('message')
+@socketio.on('message')
 def handle_message(message):
     print("Received message: " + message)
-    if message == "User connected.":
+    if message != "User connected.":
         send(message, broadcast=True)
 
 @app.route('/')
